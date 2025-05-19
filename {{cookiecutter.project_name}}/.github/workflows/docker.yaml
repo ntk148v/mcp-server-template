@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: {% raw %}${{ github.repository }}{% endraw %}
+  IMAGE_NAME: ${% raw %}{{ github.repository }}{% endraw %}
 
 jobs:
   build-and-push:
@@ -38,12 +38,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${% raw %}{{ env.REGISTRY }}{% endraw %}/${% raw %}{{ env.IMAGE_NAME }}{% endraw %}
+          images: ${% raw %}{{ env.REGISTRY }}/${{ env.IMAGE_NAME }}{% endraw %}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={% raw %}{{ version }}{% endraw %}
-            type=semver,pattern={% raw %}{{ major }}{% endraw %}.{% raw %}minor }}{% endraw %}
+            type=semver,pattern={% raw %}{{ major }}.{{ minor }}{% endraw %}
             type=semver,pattern={% raw %}{{ major }}{% endraw %}
             type=sha,format=long
 
