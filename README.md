@@ -60,26 +60,32 @@ cookiecutter path/to/mcp-server-template
 ```shell
 {{cookiecutter.project_name}}
 ├── Dockerfile
+├── .github
+│   └── workflows
+│       ├── docker.yaml
+│       └── publish.yaml
+├── .gitignore
 ├── LICENSE
+├── Makefile
 ├── pyproject.toml
 ├── README.md
-└── src
-    └── {{cookiecutter.module_name}}
-        ├── __init__.py
-        ├── main.py
-        └── server
-            ├── __init__.py
-            ├── prompts
-            │   ├── __init__.py
-            │   └── prompts.py
-            ├── resources
-            │   ├── __init__.py
-            │   └── resources.py
-            └── tools
-                ├── __init__.py
-                └── tools.py
-
-7 directories, 13 files
+├── src
+│   └── {{cookiecutter.module_name}}
+│       ├── __init__.py
+│       ├── main.py
+│       └── server
+│           ├── __init__.py
+│           ├── prompts
+│           │   ├── __init__.py
+│           │   └── prompts.py
+│           ├── resources
+│           │   ├── __init__.py
+│           │   └── resources.py
+│           └── tools
+│               ├── __init__.py
+│               └── tools.py
+└── tests
+    └── .gitkeep
 ```
 
 |                      |                                                                           |
@@ -89,6 +95,7 @@ cookiecutter path/to/mcp-server-template
 | `server/tools`       | Tool implementations (functions that the LLM can call to perform actions) |
 | `server/resources`   | Resource implementations (data sources that provide context to the LLM)   |
 | `server/prompts`     | Prompt template implementations (reusable conversation templates)         |
+| `tests/`             | Test cases                                                                |
 
 - Edit these files according to your need: adding a new tool, a new resource, ...
 - Run dev mode for testing:
