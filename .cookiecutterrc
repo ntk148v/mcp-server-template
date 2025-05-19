@@ -1,0 +1,13 @@
+# Cookiecutter Configuration
+cookiecutters_dir: ~/.cookiecutters
+replay_dir: ~/.cookiecutter_replay
+
+# Files and directories to exclude from template processing
+_copy_without_render:
+  - .venv/**
+  - venv/**
+  - __pycache__/**
+  - *.pyc
+  - *.pyo
+  - *.pyd
+  - .Python
