@@ -4,7 +4,7 @@
   "github_username": "your_github_username",
   "project_description": "A Model Context Protocol (MCP) server",
   "project_name": "mcp-server",
-  "project_title": "MCP Server",
+  "project_title": "{{ cookiecutter.project_name.upper().replace('-', ' ') }}",
   "python_version": "3.12",
   "version": "0.1.0",
   "module_name": "{{ cookiecutter.project_name.lower().replace('-', '_') }}"
